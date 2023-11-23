@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.env
+*.log
+*.tmp
+/spec/fixtures/native-addon/echo/build/
+ts-gen
+.depshash
+.depshash-target
+patches/mtime-cache.json
+out/
+images/
