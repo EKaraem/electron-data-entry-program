@@ -29,8 +29,7 @@
   "build": {
     "appId": "visaprinter",
     "win": {
-      "target": "nsis",
-      "icon": "./icon.ico"  
+      "icon": "./images/icon.ico"  
     }
   }
 }
