@@ -29,201 +29,175 @@
     </div>
 
     <div class="cards" id="cards-container">
-      <div class="m-5 p-3 card card-template">
-        <div class="row m-2">
-          <div class="col-lg-12 mx-auto">
-            <div class="inline-block">
-              <label for="photoPath"> الصورة الشخصية:</label>
-              <input
-                type="file"
-                name="photoPath"
-                class="form-control form-control-lg"
-              />
-            </div>
-
-            <div class="row m-2">
-              <div class="col">
-                <label for="personalNumber"> الرقم الشخصي:</label>
+ 
+        <div class="m-5 p-3 card card-template">
+          <div class="row m-2">
+            <div class="col-lg-12 mx-auto">
+              <div class="inline-block">
+                <label for="photoPath">الصورة الشخصية:</label>
                 <input
-                  type="text"
-                  name="personalNumber"
-                  placeholder="الرقم الشخصي"
+                  type="file"
+                  name="photoPath"
                   class="form-control form-control-lg"
+                   
                 />
               </div>
-              <div class="col">
-                <label for="fileNumber">رقم الملف:</label>
-                <input
-                  type="text"
-                  name="fileNumber"
-                  placeholder="رقم الملف"
-                  class="form-control form-control-lg"
-                />
-              </div>
-            </div>
-
-            <div class="row m-2">
-              <div class="col">
-                <label for="firstNameEnglish">الاسم:</label>
-                <input
-                  type="text"
-                  name="firstNameEnglish"
-                  placeholder="الاسم"
-                  class="form-control form-control-lg"
-                />
-              </div>
-              <div class="col">
-                <label for="lastNameEnglish">اللقب:</label>
-                <input
-                  type="text"
-                  name="lastNameEnglish"
-                  placeholder="اللقب"
-                  class="form-control form-control-lg"
-                />
-              </div>
-              <div class="col">
-                <label for="fullName">الاسم الكامل:</label>
-                <input
-                  type="text"
-                  name="fullName"
-                  placeholder="الاسم الكامل"
-                  class="form-control form-control-lg"
-                />
-              </div>
-            </div>
-
-            <div class="row m-2">
-              <div class="col">
-                <label for="passport">جواز السفر:</label>
-                <input
-                  type="text"
-                  name="passport"
-                  placeholder="جواز السفر"
-                  class="form-control form-control-lg"
-                />
-              </div>
-              <div class="col">
-                <label for="type">نوع التأشيرة:</label>
-                <select
-                  id="type"
-                  name="type"
-                  class="form-control form-control-lg"
-                >
-                  <option value="" disabled selected>نوع التأشيرة</option>
-                  <option value="مهمة">مهمة</option>
-                  <option value="سياحة">سياحة</option>
-                  <option value="عمل">عمل</option>
-                  <option value="دبلوماسي">دبلوماسي</option>
-                  <option value="إلتحاق">إلتحاق</option>
-                  <option value="صحفي">صحفي</option>
-                </select>
-              </div>
-              <div class="col">
-                <label for="validUntil">صالحة إلى:</label>
-                <input
-                  type="text"
-                  name="validUntil"
-                  placeholder="صالحة إلى"
-                  class="form-control form-control-lg"
-                />
-              </div>
-            </div>
-
-            <div class="row m-2">
-              <div class="col">
-                <label for="entryNum">عدد مرات الدخول:</label>
-                <select
-                  id="enterNum"
-                  name="entryNum"
-                  class="form-control form-control-lg"
-                >
-                  <option value="" disabled selected>عدد مرات الدخول</option>
-                  <option value="واحدة">واحدة</option>
-                  <option value="متعددة">متعددة</option>
-                </select>
-              </div>
-              <div class="col">
-                <label for="placeOfIssue">مكان الإصدار:</label>
-                <input
-                  type="text"
-                  name="placeOfIssue"
-                  placeholder="مكان الإصدار"
-                  class="form-control form-control-lg"
-                />
-              </div>
-
-              <div class="col inline-block">
-                <label for="issueDate">تاريخ الإصدار :</label>
-                <input
-                  type="date"
-                  name="issueDate"
-                  class="form-control form-control-lg"
-                />
-              </div>
-            </div>
-
-            <div class="row m-2">
-              <div class="col">
-                <label for="job">المهنة:</label>
-                <input
-                  type="text"
-                  name="job"
-                  placeholder="المهنة"
-                  class="form-control form-control-lg"
-                />
-              </div>
-              <div class="col">
-                <label for="sponsor">الكفيل:</label>
-                <input
-                  type="text"
-                  name="sponsor"
-                  placeholder="الكفيل"
-                  class="form-control form-control-lg"
-                />
-              </div>
-              <div class="col">
-                <label for="acceptance">الموافقة:</label>
-                <input
-                  type="text"
-                  name="acceptance"
-                  placeholder="الموافقة"
-                  class="form-control form-control-lg"
-                />
-              </div>
-            </div>
-
-            <div class="row m-2">
-              <div class="col">
-                <label for="digits">الآلي:</label>
-                <input
-                  type="text"
-                  name="digits"
-                  placeholder="الآلي"
-                  class="form-control form-control-lg"
-                />
-              </div>
-              <div class="col">
-                <div class="inline-block">
-                  <label for="currentDate">التاريخ:</label>
+        
+              <div class="row m-2">
+                <div class="col">
+                  <label for="digits">الآلي:</label>
                   <input
-                    type="date"
-                    name="currentDate"
+                    type="text"
+                    name="digits"
+                    placeholder="الآلي" 
+                    class="form-control form-control-lg"
+                     
+                  />
+                </div>
+              </div>
+        
+              <div class="row m-2">
+                <div class="col">
+                  <label for="firstNameEnglish">الاسم:</label>
+                  <input
+                    type="text"
+                    name="firstNameEnglish"
+                    placeholder="الاسم" 
+                    class="form-control form-control-lg"
+                     
+                  />
+                </div>
+                <div class="col">
+                  <label for="lastNameEnglish">اللقب:</label>
+                  <input
+                    type="text"
+                    name="lastNameEnglish"
+                    placeholder="اللقب" 
+                    class="form-control form-control-lg"
+                     
+                  />
+                </div>
+                <div class="col">
+                  <label for="fullName">الاسم الكامل:</label>
+                  <input
+                    type="text"
+                    name="fullName"
+                    placeholder="الاسم الكامل" 
                     class="form-control form-control-lg"
                   />
                 </div>
               </div>
-              <div class="col">
-                <label for="nationality">الجنسية:</label>
-                <input
-                  type="text"
-                  name="nationality"
-                  placeholder="الجنسية"
-                  class="form-control form-control-lg"
-                />
+        
+              <div class="row m-2">
+                <div class="col">
+                  <label for="passport">جواز السفر:</label>
+                  <input
+                    type="text"
+                    name="passport"
+                    placeholder="رقم جواز السفر" 
+                    class="form-control form-control-lg"
+                     
+                  />
+                </div>
+        
+                <div class="col">
+                  <label for="job">المهنة:</label>
+                  <input
+                    type="text"
+                    name="job"
+                    placeholder="المهنة" 
+                    class="form-control form-control-lg"
+                     
+                  />
+                </div>
+                <div class="col">
+                  <label for="placeOfIssue">مكان الإصدار:</label>
+                  <input
+                    type="text"
+                    name="placeOfIssue"
+                    placeholder="مكان الإصدار" 
+                    class="form-control form-control-lg"
+                     
+                  />
+                </div>
               </div>
+        
+              <div class="row m-2">
+                <div class="col inline-block">
+                  <label for="issueDate">تاريخ الإصدار :</label>
+                  <input
+                    type="date"
+                    name="issueDate"
+                    placeholder="تاريخ الإصدار" 
+                    class="form-control form-control-lg"
+                     
+                  />
+                </div>
+                <div class="col">
+                  <label for="validUntil">صالحة إلى:</label>
+                  <input
+                    type="date"
+                    name="validUntil"
+                    placeholder="صالحة إلى" 
+                    class="form-control form-control-lg"
+                     
+                  />
+                </div>
+                <div class="col">
+                  <div class="inline-block">
+                    <label for="currentDate">مدة الإقامة:</label>
+                    <input
+                      type="text"
+                      name="currentDate"
+                      placeholder="10 ايام" 
+                      class="form-control form-control-lg"
+                       
+                    />
+                  </div>
+                </div>
+              </div>
+        
+              <div class="row m-2">
+                <div class="col">
+                  <label for="entryNum">عدد مرات الدخول:</label>
+                  <select
+                    id="enterNum"
+                    name="entryNum"
+                    class="form-control form-control-lg"
+                     
+                  >
+                    <option value="واحدة" selected>واحدة</option>
+                    <option value="متعددة">متعددة</option>
+                  </select>
+                </div>
+        
+                <div class="col">
+                  <label for="sponsor">الكفيل:</label>
+                  <input
+                    type="text"
+                    name="sponsor"
+                    placeholder="الكفيل" 
+                    class="form-control form-control-lg"
+                     
+                  />
+                </div>
+                <div class="col">
+                  <label for="nationality">الجنسية:</label>
+                  <input
+                    type="text"
+                    name="nationality"
+                    placeholder="ليبي"  
+                    class="form-control form-control-lg"
+                     
+                  />
+                </div>
+              </div>
+        
             </div>
           </div>
         </div>
+        
+       
       </div>
     </div>
     <div class="m-5">

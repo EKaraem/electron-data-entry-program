@@ -5,7 +5,7 @@ const printHandler = require('./printHandler');
 let win;
 function createWindow() {
   win = new BrowserWindow({
-    icon: './images/id-card.png',
+    icon: './images/visa.png',
     width: 1000,
     height: 800,
     webPreferences: {

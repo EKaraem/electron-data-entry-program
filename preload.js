@@ -53,15 +53,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     closeButton.addEventListener('click', () => {
       newCard.remove();
+      cardData = collectCardData();
     });
+    cardData = collectCardData();
   });
 
   printCards.addEventListener('click', () => {
     try {
       cardData = collectCardData();
-      ipcRenderer.send('print-report', cardData);
+     
+        ipcRenderer.send('print-report', cardData);
+     
     } catch (error) {
-      console.error('Error collecting card data:', error);
+      console.error('خطأ:', error);
     }
   });
 
@@ -79,6 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (input.files.length > 0) {
               // Get the file path and store it in the data object
               data[input.name] = input.files[0].path;
+            }else{
+              data[input.name] = '';
             }
           } else {
             data[input.name] = input.value;
@@ -95,4 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return [];
     }
   }
+
+ 
+
 });

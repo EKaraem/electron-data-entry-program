@@ -24,7 +24,7 @@ module.exports = {
           layout: 'portrait', // or 'landscape'
           direction: 'rtl',
           margin: {
-            top: 15,
+            top: 150,
             left: 8,
           },
           font: arabicFontPath,
@@ -34,23 +34,17 @@ module.exports = {
 
         const stream = fs.createWriteStream(pdfPath);
         doc.pipe(stream);
-        let margin = 0;
+        let margin = 12;
         cardData.forEach((card, index) => {
-          if (card.personalNumber) {
-            doc.text(`${card.personalNumber}`, 5.33 * 72, 1.25 * 72 + margin, {
+       if(card.digits){
+            doc.text(`${card.digits}`, 5.33 * 72, 1.20 * 72 + margin, {
               width: 0.91 * 72,
               height: 0.11 * 72,
               align: 'right',
               lineBreak: true,
             });
-
-            doc.text(`${card.fileNumber}`, 4.33 * 72, 1.25 * 72 + margin, {
-              width: 0.91 * 72,
-              height: 0.11 * 72,
-              align: 'right',
-              lineBreak: true,
-            });
-
+ 
+ //new line
             doc.text(
               `${card.firstNameEnglish}`,
               5.33 * 72,
@@ -74,120 +68,69 @@ module.exports = {
                 lineBreak: true,
               }
             );
+             //new line
             doc.text(`${card.passport}`, 5.33 * 72, 1.77 * 72 + margin, {
               width: 0.91 * 72,
               height: 0.11 * 72,
               align: 'right',
               lineBreak: true,
             });
-
-            doc.text(`${card.validUntil}`, 3.28 * 72, 1.77 * 72 + margin, {
+        
+            doc.text(`${card.job}`, 4.33 * 72, 1.77 * 72 + margin, {
               width: 0.91 * 72,
               height: 0.11 * 72,
               align: 'right',
             });
 
-            doc.text(`${card.type}`, 4.33 * 72, 1.77 * 72 + margin, {
+            doc.text(`${card.placeOfIssue}`, 3.28 * 72, 1.77 * 72 + margin, {
               width: 0.91 * 72,
               height: 0.11 * 72,
               align: 'right',
             });
-            doc.text(`${card.placeOfIssue}`, 4.33 * 72, 2.05 * 72 + margin, {
+        
+            //new line
+            doc.text(`${card.validUntil}`, 4.33 * 72, 2.05 * 72 + margin, {
               width: 0.91 * 72,
               height: 0.11 * 72,
               align: 'right',
             });
-
-            doc.text(`${card.entryNum}`, 5.33 * 72, 2.05 * 72 + margin, {
+            
+            doc.text(`${card.issueDate}`, 5.33 * 72, 2.05 * 72 + margin, {
               width: 0.91 * 72,
               height: 0.11 * 72,
               align: 'right',
             });
-
-            doc.text(`${card.issueDate}`, 3.28 * 72, 2.05 * 72 + margin, {
+            
+            doc.text(`${card.currentDate}`, 3.28 * 72, 2.05 * 72 + margin, {
               width: 0.91 * 72,
               height: 0.11 * 72,
               align: 'right',
             });
-
-            doc.text(`${card.job}`, 5.33 * 72, 2.36 * 72 + margin, {
-              width: 1 * 72,
-              height: 0.5 * 72,
+      //new line
+// New line  
+            doc.text(`${card.entryNum}`, 5.33 * 72, 2.36 * 72 + margin, { 
+              width: 0.91 * 72,
+              height: 0.11 * 72,
               align: 'right',
               lineBreak: true,
             });
 
-            doc.text(`${card.sponsor}`, 4.33 * 72, 2.36 * 72 + margin, {
+
+            doc.text(`${card.sponsor}`, 4.33 * 72, 2.36 * 72 + margin, { 
               width: 1 * 72,
               height: 0.5 * 72,
               align: 'right',
-              lineBreak: true,
             });
 
-            doc.text(
-              `${card.acceptance} ` + `الموافقة:`,
-              5.4 * 72,
-              2.68 * 72 + margin,
-              {
-                width: 0.91 * 72,
-                height: 0.31 * 72,
-                align: 'right',
-                lineBreak: true,
-              }
-            );
 
-            doc.text(
-              `${card.currentDate} ` + `التاريخ:`,
-              5.4 * 72,
-              2.98 * 72 + margin,
-              {
-                width: 0.91 * 72,
-                height: 0.31 * 72,
-                align: 'right',
-                lineBreak: true,
-              }
-            );
-
-            doc.text(
-              `${card.digits} ` + `الآلي:`,
-              4.4 * 72,
-              2.68 * 72 + margin,
-              {
-                width: 0.91 * 72,
-                height: 0.5 * 72,
-                align: 'right',
-                lineBreak: true,
-              }
-            );
-
-            //-----------    --------  image  --------
-            doc.image(`${card.photoPath}`, 2.43 * 72, 1.35 * 72 + margin, {
+            //-----------    --------  image  -------- in the middle 
+            doc.image(`${card.photoPath}`, 2.43 * 72, 1.31 * 72 + margin, {
               width: 0.78 * 72,
               height: 0.95 * 72,
             });
 
-            // ------------   Rotate   ---------------------------------
-            doc.save();
-
-            doc.rotate(-90, { origin: [6.56 * 72, 2.17 * 72 + margin] });
-            doc.text(`${card.personalNumber}`, 6.56 * 72, 2.17 * 72 + margin, {
-              width: 0.91 * 72,
-              height: 0.11 * 72,
-              align: 'right',
-              lineBreak: true,
-            });
-            doc.restore();
-
-            doc.save();
-            doc.rotate(-90, { origin: [1.74 * 72, 2.17 * 72 + margin] });
-            doc.text(`${card.personalNumber}`, 1.74 * 72, 2.17 * 72 + margin, {
-              width: 0.91 * 72,
-              height: 0.11 * 72,
-              align: 'right',
-              lineBreak: true,
-            });
-            doc.restore();
-
+            // ------------   Rotate   --------------------------------- LEFT SIDE Of THE PAGE
+   
             doc.save();
             doc.rotate(-90, { origin: [1.65 * 72, 1.24 * 72 + margin] });
             doc.text(`${card.fullName}`, 1.65 * 72, 1.24 * 72 + margin, {
@@ -197,11 +140,11 @@ module.exports = {
             });
 
             doc.restore();
-
+     
             doc.save();
             doc.rotate(-90, { origin: [1.65 * 72, 3.21 * 72 + margin] });
             doc.text(
-              `${card.validUntil}  ${card.issueDate}  ${card.passport}  ${card.nationality} `,
+              ` ${card.validUntil} / ${card.issueDate} / ${card.passport} / ${card.nationality} `,
               1.65 * 72,
               3.21 * 72 + margin,
               {
@@ -214,10 +157,10 @@ module.exports = {
             //        .rect(1.65 * 72, 3.51 * 72 + margin, 2 * 72, 1 * 72)
             //       .lineWidth(1) // Set the line width of the box
             //      .stroke();
-
+          }   
             doc.restore();
-          }
-          margin += 271;
+         
+          margin += 275;
           // ------------  END  Rotate   ------------------
         });
         doc.end();

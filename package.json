@@ -1,6 +1,6 @@
 {
   "name": "visa-printer",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Simple program that print information",
   "main": "main.js",
   "scripts": {
@@ -18,11 +18,19 @@
     "@electron-forge/maker-squirrel": "^7.1.0",
     "@electron-forge/maker-zip": "^7.1.0",
     "@electron-forge/plugin-auto-unpack-natives": "^7.1.0",
-    "electron": "^27.1.0"
+    "electron": "^27.1.0",
+    "electron-builder": "^25.1.8"
   },
   "dependencies": {
     "bootstrap": "^5.3.2",
     "electron-squirrel-startup": "^1.0.0",
     "pdfkit": "^0.14.0"
+  },
+  "build": {
+    "appId": "visaprinter",
+    "win": {
+      "target": "nsis",
+      "icon": "./icon.ico"  
+    }
   }
 }
